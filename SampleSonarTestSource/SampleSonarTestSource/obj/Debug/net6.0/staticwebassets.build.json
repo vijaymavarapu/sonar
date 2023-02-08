@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "6MM4m+mNS9/Z9T+8MRASEkEsjjvphms9aOuPirFOiSo=",
+  "Source": "SampleSonarTestSource",
+  "BasePath": "_content/SampleSonarTestSource",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
