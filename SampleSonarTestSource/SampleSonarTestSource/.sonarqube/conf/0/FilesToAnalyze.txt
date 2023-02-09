@@ -1,0 +1,10 @@
+﻿D:\a_Sonar\SampleSonarTestSource\SampleSonarTestSource\Controllers\WeatherForecastController.cs
+D:\a_Sonar\SampleSonarTestSource\SampleSonarTestSource\Program.cs
+D:\a_Sonar\SampleSonarTestSource\SampleSonarTestSource\WeatherForecast.cs
+D:\a_Sonar\SampleSonarTestSource\SampleSonarTestSource\obj\Debug\net6.0\SampleSonarTestSource.GlobalUsings.g.cs
+D:\a_Sonar\SampleSonarTestSource\SampleSonarTestSource\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+D:\a_Sonar\SampleSonarTestSource\SampleSonarTestSource\obj\Debug\net6.0\SampleSonarTestSource.AssemblyInfo.cs
+D:\a_Sonar\SampleSonarTestSource\SampleSonarTestSource\obj\Debug\net6.0\SampleSonarTestSource.MvcApplicationPartsAssemblyInfo.cs
+D:\a_Sonar\SampleSonarTestSource\SampleSonarTestSource\appsettings.Development.json
+D:\a_Sonar\SampleSonarTestSource\SampleSonarTestSource\appsettings.json
+D:\a_Sonar\SampleSonarTestSource\SampleSonarTestSource\Properties\launchSettings.json
