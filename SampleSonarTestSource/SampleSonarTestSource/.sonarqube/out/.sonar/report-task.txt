@@ -1,6 +1,0 @@
-projectKey=p4_key
-serverUrl=http://localhost:9001
-serverVersion=9.9.0.65466
-dashboardUrl=http://localhost:9001/dashboard?id=p4_key
-ceTaskId=AYYwIb3-BtELQf7zcq4a
-ceTaskUrl=http://localhost:9001/api/ce/task?id=AYYwIb3-BtELQf7zcq4a
