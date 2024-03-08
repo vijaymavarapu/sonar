@@ -7,9 +7,9 @@ pipeline {
             steps
             {
                 script {
-                            git branch: 'dev-raju-jenkintest',
-                            url: 'https://Raju.Gupta:2znd5oyr6g45j7s672h3gguvmdbr5okin522t5dwss6llwfivdxa@dev.azure.com/devopsbricks/ML-Projects/_git/MLOps-Accelator'
-                        }
+                             git branch: 'dev-raju-jenkintest',
+                             url: 'https://Raju.Gupta:2znd5oyr6g45j7s672h3gguvmdbr5okin522t5dwss6llwfivdxa@dev.azure.com/devopsbricks/ML-Projects/_git/MLOps-Accelator'
+			}
             }
         }
         stage('Build') 
