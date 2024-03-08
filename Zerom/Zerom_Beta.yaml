@@ -7,7 +7,7 @@ pipeline {
                     git branch: 'dev-raju-jenkintest',
                         //credentialsId: '<password>',
                         //credentialsId: '9f4270ce-1a82-4ad2-a18d-db2d774c2c7a',
-                        url: 'https://Raju.Gupta:coo62pk7tjd2nrlek5zpg5wbdgjxvi4o5mip24slhs7dnw3ecsba@dev.azure.com/devopsbricks/ML-Projects/_git/MLOps-Accelator'
+                        url: 'https://Raju.Gupta:enjscxrmjpfnqg67v4awplrecfmuikk2jcdf245w5ch6udwraaeq@dev.azure.com/devopsbricks/ML-Projects/_git/MLOps-Accelator'
                 }
             }
         }
