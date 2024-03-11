@@ -6,10 +6,9 @@ pipeline {
                 script {
                    
   			git branch: 'dev-raju-jenkintest',
-
                         credentialsId: '9f4270ce-1a82-4ad2-a18d-db2d774c2c7a',
-
-                        url: 'https://devopsbricks@dev.azure.com/devopsbricks/ML-Projects/_git/MLOps-Accelator'  }
+                        url: 'https://devopsbricks@dev.azure.com/devopsbricks/ML-Projects/_git/MLOps-Accelator'
+}
             }
         }
         stage('Build') {
