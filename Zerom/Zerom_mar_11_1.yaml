@@ -1,0 +1,48 @@
+pipeline {
+    agent any
+    stages {
+       stage('Git Checkout') {
+            steps {
+                script {
+                    git branch: 'dev-raju-jenkintest',
+                        url: 'https://Raju.Gupta:aegacqyt2loxxqfejvv3gbmwe3nvheijtl7ddrximnbyzkwff7eq@dev.azure.com/devopsbricks/ML-Projects/_git/MLOps-Accelator'
+                }
+            }
+        }
+        stage('Build') {
+          
+            steps { 
+                script {    
+      try {
+          
+                      //  sh 'test_script.sh'
+                      dir("ProjectA/Components/ComponentA"+"/") {
+                      // dir("${params.ProjectName}"+"/Components/"+"${params.ComponentName}"+"/") { 
+                        //sh "sudo docker build -t rajugupta8019/${params.ProjectName.toLowerCase()}_${params.ComponentName.toLowerCase()}:${params.version} ."
+                        sh "sudo docker build -t rajugupta8019/latest ."
+    }   
+                    } catch (e) {
+                        echo "An error occurred: ${e}"
+                       //  writeFile(file: "${params.ProjectName.toLowerCase()}_${params.ComponentName.toLowerCase()}_error.txt", text: "An error occurred: ${e}")
+                        // throw new Exception("Something went wrong!")
+                          sh "ls -l"
+                    }
+                }
+            }
+        }
+
+        stage('Login to Docker Hub') {      	
+            steps{                       	
+	              sh 'sudo docker login -u raju.gupta@cyient.com -p P@ssword12345'                		
+	              echo 'Login Completed'      
+            }           
+        }  
+    stage('Push') {
+      steps {
+       // sh "sudo docker push rajugupta8019/${params.ProjectName.toLowerCase()}_${params.ComponentName.toLowerCase()}:${params.version}"
+          sh "sudo docker push rajugupta8019/latest"
+     
+      }
+    }
+    }
+}
