@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+    stages 
+    {
+        stage('Git Checkout') 
+        {
+            steps
+            {
+                script {
+                            git branch: 'dev',
+                            url: 'https://Raju.Gupta:6daofdqjvc2nbpocbvojl556ctfpnbp24sdzgydvaomfx7h2cfvq@dev.azure.com/devopsbricks/Sandbox/_git/Multi-Container'
+                        }
+            }
+        }
+        stage('Build') 
+        {          
+            steps 
+            { 
+                script 
+                {    
+                    try 
+                    {           
+                        dir("sqldata/data/Dockerfile"+"/") 
+                        {
+                            sh "sudo docker build -t rajugupta8019/latest ."
+                        }   
+                    } 
+                    catch (e) 
+                    {
+                        echo "An error occurred: ${e}"
+                            sh "ls -l"
+                    }
+                }
+            }
+        }
+         
+        stage('Login to Docker Hub') 
+        {      	
+            steps
+            {                       	
+	                sh 'sudo docker login -u raju.gupta@cyient.com -p P@ssword12345'    
+                    // sh 'sudo docker login -u raju.gupta@cyient.com -p P@ssword12345'    
+	                echo 'Login Completed'      
+            }   
+
+        }  
+        stage('Push') 
+        {
+            steps 
+            {
+                    sh "sudo docker push rajugupta8019/latest"
+                    // sh "sudo docker push rajugupta8019/latest"
+            }
+        }    
+    }
+}
+
+ 
