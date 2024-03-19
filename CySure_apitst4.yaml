@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+    stages {
+       stage('Git Checkout') {
+            steps {
+                script {
+                    //git branch: 'dev-raju-jenkintest', 
+                     //   url: 'https://Raju.Gupta:7znznvnosu7zplihdps5s4jdn246b3sj3xkiq5dsmr45qydb7xva@dev.azure.com/devopsbricks/ML-Projects/_git/MLOps-Accelator'
+                
+                    git branch: 'master',
+                            url: 'https://Raju.Gupta:6daofdqjvc2nbpocbvojl556ctfpnbp24sdzgydvaomfx7h2cfvq@dev.azure.com/devopsbricks/Sandbox/_git/ISP'
+                    }
+            }
+        }
+        stage('Build') {
+          
+            steps { 
+                script {    
+      try {
+                       //dir("ISPWebApi/Dockerfile"+"/") 
+                     // {
+                     //sh 'docker image build -t acrcyient.azurecr.io/devops-platform-api2:${BUILD_NUMBER} -f ./ISPWebApi/Dockerfile .'
+                        sh 'docker image build -t acrcyient.azurecr.io/devops-platform-api:${BUILD_NUMBER} -f ./' + ISPWebApi/Dockerfile +" ."
+                        
+                       // }   
+                    } catch (e) {
+                        echo "An error occurred: ${e}"
+                          sh "ls -l"
+                    }
+                }
+            }
+        }
+
+        stage('azure login and push the docker image to acr') {      	
+            steps{                       	
+              
+                 sh 'docker login -u acrcyient -p yabVZrr05tT5/8NihfdfHQnOGlXPnMmGMsUvr2vvjb+ACRD0CLHh acrcyient.azurecr.io'
+                 sh 'docker image push acrcyient.azurecr.io/devops-platform-api:${BUILD_NUMBER} '
+               
+            }           
+        }   
+    }
+}
