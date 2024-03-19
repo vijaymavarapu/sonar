@@ -22,7 +22,7 @@ pipeline {
                     {           
                         dir("ISPWebApi/Dockerfile"+"/") 
                         {
-                            sh "sudo docker build -t rajugupta8019/latest ."
+                            sh "sudo docker build -t rajugupta8019/abc ."
                         }   
                     } 
                     catch (e) 
@@ -48,7 +48,7 @@ pipeline {
         {
             steps 
             {
-                    sh "sudo docker push rajugupta8019/latest"
+                    sh "sudo docker push rajugupta8019/abc"
                     // sh "sudo docker push rajugupta8019/latest"
             }
         }    
